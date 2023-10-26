@@ -1,33 +1,29 @@
 import { useState } from 'react'
-import { useAuth0 } from '@auth0/auth0-react'
 import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
 import { getProductByIdApi } from '../../apis/products'
 import { ChangeEvent } from 'react'
 import FeaturedBanana from '../../components/FeaturedBanana/FeaturedBanana'
-import { UpdatedCartItemQuantity } from '../../../models/cart'
 import { addToCartByIdApi } from '../../apis/cart'
+import { IndividualProduct } from '../../../models/product'
 
 function Product() {
-  const { user } = useAuth0()
   const params = useParams()
   const id = Number(params.id)
   const [selectedQuantity, setSelectedQuantity] = useState<string>('1')
   const [buttonText, setButtonText] = useState('Add to Cart')
 
-  const userId =
-    user === undefined ? 'a0' : user.sub === undefined ? 'a0' : user.sub
-
   const { data: product } = useQuery(['getProduct', id], async () => {
-    return await getProductByIdApi(id)
+    const product = getProductByIdApi(id)
+    return product as IndividualProduct
   })
 
   function handleSelectChange(event: ChangeEvent<HTMLSelectElement>) {
     setSelectedQuantity(event.target.value)
   }
 
-  async function handleClick(newItem: UpdatedCartItemQuantity) {
-    await addToCartByIdApi(newItem)
+  async function handleClick(productId: number, quantity: number) {
+    addToCartByIdApi(productId, quantity)
     setSelectedQuantity('1')
     setButtonText('Added to Cart')
     setTimeout(() => {
@@ -72,11 +68,7 @@ function Product() {
                       </p>
                       <button
                         onClick={() =>
-                          handleClick({
-                            userId: userId,
-                            productId: product.id,
-                            quantity: Number(selectedQuantity),
-                          })
+                          handleClick(product.id, Number(selectedQuantity))
                         }
                       >
                         {buttonText}
