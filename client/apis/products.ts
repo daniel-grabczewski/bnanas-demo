@@ -1,9 +1,14 @@
-import { IndividualProduct } from '../../models/product'
+import { IndividualProduct, ShopProduct } from '../../models/product'
 import { products } from '../data'
 
 // Function to load all products
-export function getAllProductsApi(): IndividualProduct[] {
-  return products
+export function getAllProductsApi(): ShopProduct[] {
+  return products.map(({ id, name, price, imgSrc }) => ({
+    id,
+    name,
+    price,
+    imgSrc,
+  }))
 }
 
 // Function to get a product by ID
