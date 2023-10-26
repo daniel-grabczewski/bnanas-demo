@@ -1,14 +1,9 @@
 import { useState, useEffect } from 'react'
-import { useAuth0 } from '@auth0/auth0-react'
 import { useNavigate, NavLink, useLocation } from 'react-router-dom'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoClose } from 'react-icons/io5'
-import { IfAuthenticated, IfNotAuthenticated } from '../Authenticated'
-import { addUserApi, checkIfUserExistsApi } from '../../apis/users'
 
 function Nav() {
-  const { logout, loginWithRedirect, user } = useAuth0()
-
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
   const [width, setWidth] = useState(window.innerWidth)
@@ -46,18 +41,6 @@ function Nav() {
     }
   }
 
-  function handleLogin() {
-    loginWithRedirect({
-      authorizationParams: {
-        redirect_uri: `${window.location.origin}/`,
-      },
-    })
-  }
-
-  function handleLogout() {
-    logout()
-  }
-
   function goTo(link: string) {
     navigate(link)
   }
@@ -65,23 +48,6 @@ function Nav() {
   const toggleMenu = () => {
     setOpen((prev) => !prev)
   }
-
-  async function checkUser() {
-    if (user === undefined) {
-      return
-    } else if (user.sub !== undefined && user.nickname !== undefined) {
-      if (await checkIfUserExistsApi(user.sub)) {
-        return
-      } else {
-        addUserApi({
-          nickname: user.nickname,
-          auth0Id: user.sub,
-        })
-      }
-    }
-  }
-
-  checkUser()
 
   return (
     <header className="header">
@@ -112,24 +78,15 @@ function Nav() {
             <li>
               <NavLink to="/shop">shop</NavLink>
             </li>
-            <li className='mobile__user-description'>
+            <li className="mobile__user-description">
               <img
                 className="mobile__user-descrition-icon"
                 src="/images/user-icon.svg"
                 alt="icon"
               />
-              {user ? <p>Signed in as: {user?.nickname}</p> : <p>guest</p>}
+              <p>Guest</p>
             </li>
-            <IfNotAuthenticated>
-              <li>
-                <button onClick={handleLogin}>log in</button>
-              </li>
-            </IfNotAuthenticated>
-            <IfAuthenticated>
-              <li>
-                <button onClick={handleLogout}>log out</button>
-              </li>
-            </IfAuthenticated>
+
             <li>
               <button onClick={() => goTo('/cart')}>
                 <img
@@ -150,7 +107,7 @@ function Nav() {
                   src="/images/user-icon.svg"
                   alt="icon"
                 />
-                {user ? <p>Signed in as: {user?.nickname}</p> : <p>guest</p>}
+                <p>Guest</p>
               </li>
             </ul>
             <ul className="header__nav-list">
@@ -198,16 +155,6 @@ function Nav() {
               </li>
             </ul>
             <ul className="header__user-login-list">
-              <IfNotAuthenticated>
-                <li>
-                  <button onClick={handleLogin}>log in</button>
-                </li>
-              </IfNotAuthenticated>
-              <IfAuthenticated>
-                <li>
-                  <button onClick={handleLogout}>log out</button>
-                </li>
-              </IfAuthenticated>
               <li>
                 <button onClick={() => goTo('/cart')}>
                   <img
