@@ -6,7 +6,6 @@ import {
   Route,
 } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { Auth0Provider } from '@auth0/auth0-react'
 
 import AppLayout from './components/AppLayout/AppLayout'
 import ProtectedComponent from './components/UI/ProtectedComponent'
@@ -47,22 +46,8 @@ function AppProvider() {
 document.addEventListener('DOMContentLoaded', () => {
   const queryClient = new QueryClient()
   createRoot(document.getElementById('app') as HTMLElement).render(
-    <Auth0Provider
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      domain="daniel-g.au.auth0.com"
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      clientId="aIGYkqO3IqkivZ75hgkU5kk7DTvBjjuL"
-      cacheLocation="localstorage"
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      audience="https://bnanas/api"
-      redirectUri={window.location.origin + '/'}
-    >
       <QueryClientProvider client={queryClient}>
         <AppProvider />
       </QueryClientProvider>
-    </Auth0Provider>
   )
 })

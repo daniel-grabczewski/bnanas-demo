@@ -1,4 +1,3 @@
-import request from 'superagent'
 import { UpdatedCartItemQuantity, RemovedItem } from '../../models/cart'
 
 const baseUrl = '/api/v1/cart'
