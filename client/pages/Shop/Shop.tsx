@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 import { useQuery } from 'react-query'
 import { getAllProductsApi } from '../../apis/products'
-import { ShopProduct } from '../../../models/shop'
+import { ShopProduct } from '../../../models/product'
 
 function Shop() {
   const { isLoading, data } = useQuery('getProducts', async () => {
-    return await getAllProductsApi()
+    const products = getAllProductsApi()
+    return products as ShopProduct[]
   })
 
   //Check if data is undefined.
