@@ -31,7 +31,7 @@ function Home() {
               <div className="col-full-bleed">
                 <img
                   className="home-benefits__img"
-                  src="images/yellow-banana.png"
+                  src="bnanas-demo/images/yellow-banana.png"
                   alt="banana"
                 ></img>
               </div>

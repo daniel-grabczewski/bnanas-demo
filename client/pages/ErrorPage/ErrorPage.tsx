@@ -18,7 +18,7 @@ function ErrorPage() {
           minHeight: '100vh',
         }}
       >
-        <img src="images/notice.svg" alt="notice" />
+        <img src="bnanas-demo/images/notice.svg" alt="notice" />
         <p>oops something went wrong!</p>
         <button
           style={{

@@ -107,7 +107,7 @@ function Cart() {
                               style={{
                                 cursor: 'pointer',
                               }}
-                              src="/images/trash-can.svg"
+                              src="bnanas-demo/images/trash-can.svg"
                               alt=""
                               onClick={() => handleRemove(item.productId)}
                             />

@@ -14,13 +14,13 @@ function HomeBanner() {
             <div className="col-full-bleed">
               <img
                 className="home-banner__img"
-                src="images/leaningbanana.png"
+                src="bnanas-demo/images/leaningbanana.png"
                 alt="team"
               ></img>
               <div className="home-banner__mobile d-md-none">
                 <img
                   className="home-banner__mobile-banana"
-                  src="images/logo.png"
+                  src="bnanas-demo/images/logo.png"
                   alt="logo"
                 ></img>
                 <h1>Bnana.</h1>

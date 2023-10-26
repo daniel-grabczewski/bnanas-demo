@@ -14,7 +14,7 @@ function AboutBanner() {
             <div className="col-full-bleed">
               <img
                 className="about-banner__img"
-                src="images/about-hero.jpg"
+                src="bnanas-demo/images/about-hero.jpg"
                 alt="team"
               />
               <div className="about-banner__mobile d-md-none">

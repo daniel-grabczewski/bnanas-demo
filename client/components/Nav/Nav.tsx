@@ -80,7 +80,7 @@ function Nav() {
             <li className="mobile__user-description">
               <img
                 className="mobile__user-descrition-icon"
-                src="/images/user-icon.svg"
+                src="bnanas-demo/images/user-icon.svg"
                 alt="icon"
               />
               <p>Guest</p>
@@ -90,7 +90,7 @@ function Nav() {
               <button onClick={() => goTo('/cart')}>
                 <img
                   className="header__cart-icon"
-                  src="/images/icon-cart.svg"
+                  src="bnanas-demo/images/icon-cart.svg"
                   alt=""
                 />
               </button>
@@ -103,7 +103,7 @@ function Nav() {
               <li>
                 <img
                   className="header__user-descrition-icon"
-                  src="/images/user-icon.svg"
+                  src="bnanas-demo/images/user-icon.svg"
                   alt="icon"
                 />
                 <p>Guest</p>
@@ -158,7 +158,7 @@ function Nav() {
                 <button onClick={() => goTo('/cart')}>
                   <img
                     className="header__cart-icon"
-                    src="/images/icon-cart.svg"
+                    src="bnanas-demo/images/icon-cart.svg"
                     alt=""
                   />
                 </button>

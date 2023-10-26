@@ -44,7 +44,7 @@ function About() {
             <div className="col-12 col-md-6 d-none d-md-block">
               <div className="col-full-bleed">
                 <img
-                  src="images/company-origin.jpg"
+                  src="bnanas-demo/images/company-origin.jpg"
                   style={{
                     filter: 'brightness(85%)',
                   }}
