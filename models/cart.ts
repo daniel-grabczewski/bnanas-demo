@@ -7,14 +7,3 @@ export interface CartItem {
   imgSrc: string
   weight: number
 }
-
-export interface UpdatedCartItemQuantity {
-  userId: string
-  productId: number
-  quantity: number
-}
-
-export interface RemovedItem {
-  userId: string
-  productId: number
-}
