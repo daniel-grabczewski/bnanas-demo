@@ -1,40 +1,51 @@
-import { UpdatedCartItemQuantity, RemovedItem } from '../../models/cart'
+import { CartItem } from "../../models/cart";
 
-const baseUrl = '/api/v1/cart'
-
-export async function getCartByIdApi(userId: string) {
-  const response = await request.get(`${baseUrl}/${userId}`)
-  return response.body as any
+// Utility function to get and parse cart from local storage
+function getCartFromLocalStorage(): CartItem[] {
+  const cart = localStorage.getItem('cart');
+  return cart ? JSON.parse(cart) : [];
 }
 
-export async function updateCartItemQuantityByProductIdApi(
-  updatedItem: UpdatedCartItemQuantity
-) {
-  await request
-    .patch(`${baseUrl}`)
-    .send(updatedItem)
-    .set('Content-Type', 'application/json')
+// Utility function to set cart in local storage
+function setCartInLocalStorage(cart: CartItem[]) {
+  localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-export async function clearCartApi(userId: string) {
-  await request
-    .delete(`${baseUrl}/all`)
-    .send({ userId })
-    .set('Content-Type', 'application/json')
+export function getCartApi(): CartItem[] {
+  return getCartFromLocalStorage();
 }
 
+export function updateCartItemQuantityByProductIdApi(updatedItem: CartItem): void {
+  const cart = getCartFromLocalStorage();
+  const index = cart.findIndex(item => item.productId === updatedItem.productId);
 
-export async function removeCartItemApi(removedItem : RemovedItem) {
-  await request
-  .delete(`${baseUrl}/single`)
-  .send(removedItem)
-  .set('Content-Type', 'application/json')
+  if (index !== -1) {
+    cart[index].quantity = updatedItem.quantity;
+  }
+  
+  setCartInLocalStorage(cart);
 }
 
+export function clearCartApi(): void {
+  localStorage.removeItem('cart');
+}
 
-export async function addToCartByIdApi(newItem : UpdatedCartItemQuantity) {
-  await request
-  .post(`${baseUrl}`)
-  .send(newItem)
-  .set('Content-Type', 'application/json')
+export function removeCartItemApi(removedItem: CartItem): void {
+  const cart = getCartFromLocalStorage();
+  const updatedCart = cart.filter(item => item.productId !== removedItem.productId);
+  
+  setCartInLocalStorage(updatedCart);
+}
+
+export function addToCartByIdApi(newItem: CartItem): void {
+  const cart = getCartFromLocalStorage();
+  const index = cart.findIndex(item => item.productId === newItem.productId);
+
+  if (index !== -1) {
+    cart[index].quantity += newItem.quantity;
+  } else {
+    cart.push(newItem);
+  }
+  
+  setCartInLocalStorage(cart);
 }
