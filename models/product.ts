@@ -4,7 +4,7 @@ export interface IndividualProduct {
   price: number
   imgSrc: string
   description: string
-  calorieCount: string
+  calorieCount: number
   weight: number
   tasteProfile: string
   origin: string
