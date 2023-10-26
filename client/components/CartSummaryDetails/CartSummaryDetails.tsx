@@ -5,7 +5,6 @@ import { clearCartApi } from '../../apis/cart'
 
 interface Props {
   products: CartItem[]
-  userId: string
   refetch: () => void
 }
 
@@ -25,10 +24,10 @@ function calculateTotalCost(cart: CartItem[], shippingPrice: number): number {
   return parseFloat(totalCost.toFixed(2))
 }
 
-function CartSummaryDetails({ products, userId, refetch }: Props) {
+function CartSummaryDetails({ products, refetch }: Props) {
   const navigate = useNavigate()
   function goTo(link: string) {
-    clearCartApi(userId)
+    clearCartApi()
     refetch()
     navigate(link)
   }
