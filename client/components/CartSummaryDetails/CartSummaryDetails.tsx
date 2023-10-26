@@ -57,6 +57,12 @@ function CartSummaryDetails({ products, refetch }: Props) {
     setSelectedShippingPrice(Number(event.target.value))
   }
 
+  const handleThankYouPageRedirect = () => {
+    if (products.length > 0) {
+      goTo('/thankyoupage')
+    }
+  }
+
   const totalCost = calculateTotalCost(products, selectedShippingPrice)
 
   return (
@@ -137,7 +143,7 @@ function CartSummaryDetails({ products, refetch }: Props) {
 
       <button
         className="cart__checkout-btn"
-        onClick={() => goTo('/thankyoupage')}
+        onClick={handleThankYouPageRedirect}
       >
         CHECKOUT
       </button>
