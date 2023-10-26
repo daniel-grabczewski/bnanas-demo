@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useQuery } from 'react-query'
-import { getAllProductsApi } from '../../apis/shop'
+import { getAllProductsApi } from '../../apis/products'
 import { ShopProduct } from '../../../models/shop'
 
 function Shop() {

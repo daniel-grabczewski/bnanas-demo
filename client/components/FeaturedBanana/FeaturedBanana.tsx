@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { Link } from 'react-router-dom'
 import { useQuery } from 'react-query'
-import { getAllProductsApi } from '../../apis/shop'
+import { getAllProductsApi } from '../../apis/products'
 import { ShopProduct } from '../../../models/shop'
 
 function FeaturedBanana() {
@@ -44,17 +44,19 @@ function FeaturedBanana() {
                           <Link
                             to={`/shop/${product.id}`}
                             className="products__product-overlay"
-                            onClick = {() => window.scrollTo(0,0)}
+                            onClick={() => window.scrollTo(0, 0)}
                           >
                             <button className="products__product-btn">
                               Shop
                             </button>
-                            <img src={product.imgSrc} alt={product.name}  />
+                            <img src={product.imgSrc} alt={product.name} />
                           </Link>
                         </div>
-                        <p className="products__product-name" onClick = {() => window.scrollTo(0,0)}>
-                          <Link to={`/shop/${product.id}`}>{product.name}
-                          </Link>
+                        <p
+                          className="products__product-name"
+                          onClick={() => window.scrollTo(0, 0)}
+                        >
+                          <Link to={`/shop/${product.id}`}>{product.name}</Link>
                         </p>
                         <p className="products__product-price">
                           ${product.price}
