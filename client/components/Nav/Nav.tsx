@@ -23,7 +23,6 @@ function Nav() {
   useEffect(() => {
     const pageTitle = getPageTitle(location.pathname)
     setPageTitle(pageTitle)
-    console.log('pageTitle', pageTitle)
   }, [location])
 
   const getPageTitle = (pathname: string) => {
