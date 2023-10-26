@@ -6,10 +6,7 @@
   "author": "Dev Academy Aotearoa",
   "license": "ISC",
   "scripts": {
-    "dev": "run-p dev:client dev:server",
-    "dev:client": "vite",
-    "build": "run-s build:client build:server",
-    "build:client": "vite build",
+    "dev": "vite",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "format": "prettier -w '**/*.{js,jsx,ts,tsx}'"
   },
