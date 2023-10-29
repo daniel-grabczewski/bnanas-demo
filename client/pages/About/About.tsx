@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import AboutBanner from '../../components/Banners/AboutBanner'
 import FounderStory from '../../components/FounderStory/FounderStory'
+import { companyOriginFilePath } from '../../data'
 
 function About() {
   return (
@@ -44,7 +45,7 @@ function About() {
             <div className="col-12 col-md-6 d-none d-md-block">
               <div className="col-full-bleed">
                 <img
-                  src="bnanas-demo/images/company-origin.jpg"
+                  src={companyOriginFilePath}
                   style={{
                     filter: 'brightness(85%)',
                   }}
