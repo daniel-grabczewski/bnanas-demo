@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import FeaturedBanana from '../../components/FeaturedBanana/FeaturedBanana'
 import HomeBanner from '../../components/Banners/HomeBanner'
+import { yellowBananaFilePath } from '../../data'
 
 function Home() {
   return (
@@ -31,7 +32,7 @@ function Home() {
               <div className="col-full-bleed">
                 <img
                   className="home-benefits__img"
-                  src="bnanas-demo/images/yellow-banana.png"
+                  src={yellowBananaFilePath}
                   alt="banana"
                 ></img>
               </div>
