@@ -4,10 +4,8 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
-  useNavigate,
 } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { useEffect } from 'react'
 
 import AppLayout from './components/AppLayout/AppLayout'
 import ProtectedComponent from './components/UI/ProtectedComponent'
@@ -20,10 +18,10 @@ import Contact from './pages/Contact/Contact'
 import Product from './pages/Product/Product'
 import ErrorPage from './pages/ErrorPage/ErrorPage'
 
+
 export const routes = createRoutesFromElements(
-  <Route path="/" element={<AppLayout />} errorElement={<ErrorPage />}>
+  <Route path='/' element={<AppLayout />} errorElement={<ErrorPage />}>
     <Route index element={<ProtectedComponent component={Home} />} />
-    <Route path="home" element={<ProtectedComponent component={Home} />} />
     <Route path="about" element={<ProtectedComponent component={About} />} />
     <Route path="cart" element={<ProtectedComponent component={Cart} />} />
     <Route path="shop" element={<ProtectedComponent component={Shop} />} />
@@ -43,25 +41,14 @@ export const routes = createRoutesFromElements(
 )
 
 function AppProvider() {
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search)
-    const path = urlParams.get('path')
-
-    if (path) {
-      navigate(path)
-    }
-  }, [navigate])
-
   return <RouterProvider router={createBrowserRouter(routes)} />
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const queryClient = new QueryClient()
   createRoot(document.getElementById('app') as HTMLElement).render(
-    <QueryClientProvider client={queryClient}>
-      <AppProvider />
-    </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <AppProvider />
+      </QueryClientProvider>
   )
 })
