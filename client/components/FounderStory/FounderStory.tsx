@@ -1,4 +1,4 @@
-import { founderStories } from './founderStories'
+import { founderStories } from '../../data'
 
 function FounderStory() {
   return (
