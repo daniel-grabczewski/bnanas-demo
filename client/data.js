@@ -1,3 +1,25 @@
+const baseURL = import.meta.env.PROD ? import.meta.env.VITE_APP_BASE_URL : ''
+
+export const userIconFilePath = `${baseURL}/images/user-icon.svg`
+
+export const iconCartFilePath = `${baseURL}/images/icon-cart.svg`
+
+export const yellowBananaFilePath = `${baseURL}/images/yellow-banana.png`
+
+export const logoFilePath = `${baseURL}/images/logo.png`
+
+export const leaningBananaFilePath = `${baseURL}/images/leaningbanana.png`
+
+export const companyOriginFilePath = `${baseURL}/images/company-origin.jpg`
+
+export const aboutHeroFilePath = `${baseURL}/images/about-hero.jpg`
+
+export const trashCanFilePath = `${baseURL}/images/trash-can.svg`
+
+export const noticeFilePath = `${baseURL}/images/notice.svg`
+
+
+
 export const products = [
     {
       id: 1,
@@ -5,7 +27,7 @@ export const products = [
       price: 49.99,
       description:
         'The Cavendish banana is a widely recognized and cultivated variety known for its elongated shape, bright yellow skin, and creamy, sweet flavor. It is a popular choice for both fresh consumption and culinary applications due to its appealing taste and texture.',
-      imgSrc: '/bnanas-demo/images/cavendish.jpg',
+      imgSrc: `${baseURL}/images/cavendish.jpg`,
       calorieCount: 110,
       weight: 150,
       tasteProfile:
@@ -20,7 +42,7 @@ export const products = [
       price: 499.99,
       description:
         'The red banana is a unique and visually striking variety of banana known for its distinctive reddish-purple skin. The peel of the red banana is thicker and tougher compared to other banana varieties. Inside, the flesh of the red banana is cream-colored with a slight pinkish hue. The red banana is smaller in size compared to the common yellow Cavendish banana, typically measuring about 4 to 6 inches (10 to 15 centimeters) in length.',
-      imgSrc: '/bnanas-demo/images/red-banana.jpg',
+      imgSrc: `${baseURL}/images/red-banana.jpg`,
       calorieCount: 100,
       weight: 120,
       tasteProfile:
@@ -35,7 +57,7 @@ export const products = [
       price: 999.99,
       description:
         'The Blue Java banana, also known as the Ice Cream banana, is a unique and visually striking variety of banana. It gets its name from the distinctive blueish-green color of its peel, which gives it a cool and intriguing appearance. This variety is known for its ability to thrive in cooler climates, making it a sought-after banana type in regions with milder temperatures.',
-      imgSrc: '/bnanas-demo/images/blue-java.jpg',
+      imgSrc: `${baseURL}/images/blue-java.jpg`,
       calorieCount: 105,
       weight: 135,
       tasteProfile:
@@ -50,7 +72,7 @@ export const products = [
       price: 199.99,
       description:
         'The Lady Finger banana, also known as the Sugar Banana or Sucrier, is a petite and slender variety of banana. It has a thin, delicate yellow skin that is easy to peel, and it typically measures around 4 to 6 inches (10 to 15 centimeters) in length',
-      imgSrc: '/bnanas-demo/images/lady-finger.jpg',
+      imgSrc: `${baseURL}/images/lady-finger.jpg`,
       calorieCount: 100,
       weight: 90,
       tasteProfile:
@@ -65,7 +87,7 @@ export const products = [
       price: 199.99,
       description:
         "The Manzano banana, also known as the Apple banana or the Apple of the Tropics, is a unique and flavorful variety of banana. It is relatively small in size, usually measuring around 3 to 4 inches (7 to 10 centimeters) in length. The Manzano banana's peel is thick and yellow, often speckled with black spots.",
-      imgSrc: '/bnanas-demo/images/manzano.jpg',
+      imgSrc: `${baseURL}/images/manzano.jpg`,
       calorieCount: 105,
       weight: 90,
       tasteProfile:
@@ -80,7 +102,7 @@ export const products = [
       price: 59.99,
       description:
         'The Berangan banana, also known as the Pisang Berangan or Dwarf Cavendish, is a popular variety of banana. It is characterized by its medium-sized, elongated shape and yellow peel. It has a smooth texture and is known for being soft and easy to eat.',
-      imgSrc: '/bnanas-demo/images/barangan.jpg',
+      imgSrc: `${baseURL}/images/barangan.jpg`,
       calorieCount: 100,
       weight: 140,
       tasteProfile:
@@ -95,7 +117,7 @@ export const products = [
       price: 139.99,
       description:
         'The Goldfinger banana is a unique and visually striking variety of banana. It features a bright golden-yellow peel that stands out from other banana varieties. The Goldfinger banana is known for its larger size, typically measuring around 7 to 8 inches (18 to 20 centimeters) in length. The Goldfinger banana is also recognized for its excellent shelf life and resistance to disease, making it a favored choice among growers and consumers alike.',
-      imgSrc: '/bnanas-demo/images/goldfinger.jpg',
+      imgSrc: `${baseURL}/images/goldfinger.jpg`,
       calorieCount: 115,
       weight: 170,
       tasteProfile:
@@ -110,7 +132,7 @@ export const products = [
       price: 79.99,
       description:
         "The Praying Hands banana is a visually striking and unique variety. It gets it's name from its distinctive hand-like appearance, with fused fingers that resemble a praying gesture. ",
-      imgSrc: '/bnanas-demo/images/praying-hands.jpg',
+      imgSrc: `${baseURL}/images/praying-hands.jpg`,
       calorieCount: 100,
       weight: 90,
       tasteProfile:
@@ -125,7 +147,7 @@ export const products = [
       price: 299.99,
       description:
         "The Mysore banana, also known as the Mysore Plantain or Pisang Mas, is characterized by its medium to large size, with a gentle curve and a vibrant yellow peel when fully ripe. It's widely consumed as a fresh fruit and is also used in various culinary applications, including desserts and savory dishes.",
-      imgSrc: '/bnanas-demo/images/mysore.jpg',
+      imgSrc: `${baseURL}/images/mysore.jpg`,
       calorieCount: 110,
       weight: 130,
       tasteProfile:
@@ -140,7 +162,7 @@ export const products = [
       price: 499.99,
       description:
         'The Gros Michel banana, also known as "Big Mike," is a banana variety that gained popularity in the early 20th century. It features a thick, firm peel that turns from green to bright yellow when fully ripe. The Gros Michel banana is larger in size compared to many modern banana varieties.',
-      imgSrc: '/bnanas-demo/images/gros-michel.jpg',
+      imgSrc: `${baseURL}/images/gros-michel.jpg`,
       calorieCount: 110,
       weight: 135,
       tasteProfile:
@@ -155,7 +177,7 @@ export const products = [
       price: 299.99,
       description:
         'The Pisang Raja banana, also known as the King banana or Musa Belle banana, is a popular banana variety known for its distinct flavor and appearance. It is larger than the average banana, with a length of about 6 to 8 inches (15 to 20 centimeters). The Pisang Raja banana has a bright yellow peel that develops brown speckles as it ripens.',
-      imgSrc: '/bnanas-demo/images/pisang-raja.jpg',
+      imgSrc: `${baseURL}/images/pisang-raja.jpg`,
       calorieCount: 115,
       weight: 170,
       tasteProfile:
@@ -170,7 +192,7 @@ export const products = [
       price: 119.99,
       description:
         'The Rhino Horn banana, also known as the Rhino Horn Plantain or Cocos Banana, is a distinctive and visually striking banana variety. It gets its name from the unique shape of its fruits, which resemble the horn of a rhinoceros. The Rhino Horn banana is larger than the average banana, with a length of about 8 to 10 inches (20 to 25 centimeters). It has a thick and tough peel that turns from green to yellow as it ripens. ',
-      imgSrc: '/bnanas-demo/images/rhino-horn.jpg',
+      imgSrc: `${baseURL}/images/rhino-horn.jpg`,
       calorieCount: 140,
       weight: 170,
       tasteProfile:
@@ -180,3 +202,47 @@ export const products = [
         'The Rhino Horn banana is often used for cooking due to its firm texture and starchy nature. It is commonly used in various traditional dishes, especially in African and Caribbean cuisines.',
     },
   ]
+
+  export const founderStories = [
+    {
+      name: 'Daniel',
+      title: 'Banana Research and Development Scientist',
+      description:
+        "Since Daniel's early years, he has been captivated by the allure and versatility of bananas. The vibrant yellow of the Cavendish, the exotic charm of the Red Dacca, and the delightful sweetness of the Lady Finger—each variety holds a unique appeal that never fails to fascinate him. This profound fascination laid the foundation for Daniel's entrepreneurial pursuit, driven by an unyielding love for bananas.",
+      favouriteBanana: 'Cavendish',
+      image: `${baseURL}/images/profile_daniel.jpg`,
+    },
+    {
+      name: 'Rigelle',
+      title: 'Banana Caretaker',
+      description:
+        "Rigelle's tenure in the esteemed banana company has been a delightful journey, fueled by an unwavering passion for the fruit. Captivated by the vibrant hues, tantalizing flavors, and versatile applications of bananas, Rigelle is wholeheartedly dedicated to driving innovation and spreading joy through these remarkable fruits.",
+      favouriteBanana: 'Blue Java',
+      image: `${baseURL}/images/profile_rigelle.jpg`,
+    },
+    {
+      name: 'Quinn',
+      title: 'Banana Developer and Analyst',
+      description:
+        "Quinn's adoration for bananas springs from an inherent fascination with their delectable flavor, nutritional benefits, and versatile nature. It is this profound love for the fruit that propels her to contribute her skills and passion to a banana company, driven by an unwavering desire to share the joy, health benefits, and limitless possibilities that bananas offer to individuals worldwide.",
+      favouriteBanana: 'Mysore',
+      image: `${baseURL}/images/profile_quinn.jpg`,
+    },
+    {
+      name: 'Leroy',
+      title: 'Banana Curator and Master of Gastronomic',
+      description:
+        'Leroy embarked on an enthralling journey driven by his unquenchable curiosity for bananas. Through extensive research, hands-on experience, and a natural talent for gastronomy, Leroy honed his expertise in exploring the diverse world of bananas, their varieties, flavors, and culinary applications. His unwavering dedication to banana knowledge and ability to elevate this humble fruit captured our attention.',
+      favouriteBanana: 'Goldfinger',
+      image: `${baseURL}/images/profile_leroy.jpg`,
+    },
+    {
+      name: 'Adam',
+      title: 'Banana Product Designer',
+      description:
+        "Adam's profound adoration for bananas emanates from an inherent recognition of their wholesome attributes and versatile characteristics. Driven by an unwavering passion for the fruit, Adam is compelled to lend expertise and unwavering dedication to a banana company, with a resolute mission to champion the delight, nutritional advantages, and culinary potential that bananas bestow upon individuals across the globe.",
+      favouriteBanana: 'Red Banana',
+      image: `${baseURL}/images/profile_adam.jpg`,
+    },
+  ]
+  
