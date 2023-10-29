@@ -952,7 +952,7 @@ margin: 0;
 	 ========================================================================== */
    
    .contactHeader {
-    background-image: url('bnanas-demo/images/ContactBnana.png');
+    background-image: url('https://daniel-grabczewski.github.io/bnanas-demo/images/ContactBnana.png');
     background-size: cover; 
     background-position: center; 
     background-color: rgb(224, 224, 224);
@@ -1014,7 +1014,7 @@ width: 100%;
 	 ========================================================================== */
 
    .thankYou-Header {
-    background-image: url('bnanas-demo/images/Thankyou-Bananas.png');
+    background-image: url('https://daniel-grabczewski.github.io/bnanas-demo/images/Thankyou-Bananas.png');
     background-size: cover; 
     background-position: center; 
     background-color: rgb(224, 224, 224);
