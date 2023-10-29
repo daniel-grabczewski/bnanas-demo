@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate, NavLink, useLocation } from 'react-router-dom'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoClose } from 'react-icons/io5'
+import { iconCartFilePath, userIconFilePath } from '../../data'
 
 function Nav() {
   const navigate = useNavigate()
@@ -80,7 +81,7 @@ function Nav() {
             <li className="mobile__user-description">
               <img
                 className="mobile__user-descrition-icon"
-                src="bnanas-demo/images/user-icon.svg"
+                src={userIconFilePath}
                 alt="icon"
               />
               <p>Guest</p>
@@ -90,7 +91,7 @@ function Nav() {
               <button onClick={() => goTo('/cart')}>
                 <img
                   className="header__cart-icon"
-                  src="bnanas-demo/images/icon-cart.svg"
+                  src={iconCartFilePath}
                   alt=""
                 />
               </button>
@@ -103,7 +104,7 @@ function Nav() {
               <li>
                 <img
                   className="header__user-descrition-icon"
-                  src="bnanas-demo/images/user-icon.svg"
+                  src={userIconFilePath}
                   alt="icon"
                 />
                 <p>Guest</p>
@@ -158,7 +159,7 @@ function Nav() {
                 <button onClick={() => goTo('/cart')}>
                   <img
                     className="header__cart-icon"
-                    src="bnanas-demo/images/icon-cart.svg"
+                    src={iconCartFilePath}
                     alt=""
                   />
                 </button>
