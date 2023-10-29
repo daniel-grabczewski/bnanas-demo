@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { leaningBananaFilePath, logoFilePath } from '../../data'
 
 function HomeBanner() {
   const navigate = useNavigate()
@@ -14,13 +15,13 @@ function HomeBanner() {
             <div className="col-full-bleed">
               <img
                 className="home-banner__img"
-                src="bnanas-demo/images/leaningbanana.png"
+                src={leaningBananaFilePath}
                 alt="team"
               ></img>
               <div className="home-banner__mobile d-md-none">
                 <img
                   className="home-banner__mobile-banana"
-                  src="bnanas-demo/images/logo.png"
+                  src={logoFilePath}
                   alt="logo"
                 ></img>
                 <h1>Bnana.</h1>
@@ -33,7 +34,7 @@ function HomeBanner() {
           </div>
           <div className="col col-md-6 col-vertical-center d-none d-md-flex">
             <div className="col-constrain">
-              <img className="home-banner__banana" src="images/logo.png" alt="logo"></img>
+              <img className="home-banner__banana" src={logoFilePath} alt="logo"></img>
               <h1>Bnana.</h1>
               <p className="subtitle  ">
                 Take a tropical journey with our luscious tropical bananas.
