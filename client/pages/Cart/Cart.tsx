@@ -10,6 +10,7 @@ import {
 import { CartItem } from '../../../models/cart'
 import CartSummaryDetails from '../../components/CartSummaryDetails/CartSummaryDetails'
 import { useNavigate } from 'react-router-dom'
+import { trashCanFilePath } from '../../data'
 
 function Cart() {
   const navigate = useNavigate()
@@ -107,7 +108,7 @@ function Cart() {
                               style={{
                                 cursor: 'pointer',
                               }}
-                              src="bnanas-demo/images/trash-can.svg"
+                              src={trashCanFilePath}
                               alt=""
                               onClick={() => handleRemove(item.productId)}
                             />
