@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { aboutHeroFilePath } from '../../data'
 
 function AboutBanner() {
   const navigate = useNavigate()
@@ -14,7 +15,7 @@ function AboutBanner() {
             <div className="col-full-bleed">
               <img
                 className="about-banner__img"
-                src="bnanas-demo/images/about-hero.jpg"
+                src={aboutHeroFilePath}
                 alt="team"
               />
               <div className="about-banner__mobile d-md-none">
