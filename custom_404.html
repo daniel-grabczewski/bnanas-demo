@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    // Parse the original path from the URL
+    const path = window.location.pathname.replace(/^\/bnanas-demo\//, '')
+    
+    // Redirect to the root URL with the original path as a query parameter
+    window.location.href = `/bnanas-demo/?path=${path}`
+  </script>
+</head>
+<body>
+  Redirecting...
+</body>
+</html>
