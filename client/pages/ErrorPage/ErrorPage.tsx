@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { noticeFilePath } from '../../data'
 
 function ErrorPage() {
   const navigate = useNavigate()
@@ -18,7 +19,7 @@ function ErrorPage() {
           minHeight: '100vh',
         }}
       >
-        <img src="bnanas-demo/images/notice.svg" alt="notice" />
+        <img src={noticeFilePath} alt="notice" />
         <p>oops something went wrong!</p>
         <button
           style={{
