@@ -8,11 +8,12 @@
     <script type="text/javascript">
       // Current URL path
       var path = window.location.pathname;
+      var hash = window.location.hash;
     
       // Check if the URL includes your base path '/bnanas-demo'
       if (path.includes("/bnanas-demo")) {
-        // Redirect to the home page, appending the original path
-        window.location.replace("/bnanas-demo/index.html" + window.location.hash);
+        // Redirect to the appropriate route by appending the original path and hash
+        window.location.replace("/bnanas-demo/index.html" + path.replace("/bnanas-demo", "") + hash);
       } else {
         // Redirect to the home page for any other 404
         window.location.replace("/bnanas-demo/");
