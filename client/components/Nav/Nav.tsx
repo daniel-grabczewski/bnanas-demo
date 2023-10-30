@@ -136,19 +136,41 @@ function Nav() {
                     : ''
                 }
               >
+                {process.env.NODE_ENV === 'production' ? (
+                  <a
+                    href="/bnanas-demo/#about"
+                    className={
+                      pageTitle === 'Home' || pageTitle === 'About'
+                        ? 'color-white'
+                        : ''
+                    }
+                  >
+                    about
+                  </a>
+                ) : (
+                  <NavLink
+                    to="/about"
+                    className={
+                      pageTitle === 'Home' || pageTitle === 'About'
+                        ? 'color-white'
+                        : ''
+                    }
+                  >
+                    about
+                  </NavLink>
+                )}
+              </li>
+
+              <li>
                 <NavLink
-                  to="/about"
-                  className={
-                    pageTitle === 'Home' || pageTitle === 'About'
-                      ? 'color-white'
-                      : ''
+                  to={
+                    process.env.NODE_ENV === 'production'
+                      ? '/bnanas-demo/contact'
+                      : '/contact'
                   }
                 >
-                  about
+                  contact
                 </NavLink>
-              </li>
-              <li>
-                <NavLink to="/contact">contact</NavLink>
               </li>
               <li>
                 <NavLink to="/shop">shop</NavLink>
