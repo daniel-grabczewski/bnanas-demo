@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate, NavLink, useLocation } from 'react-router-dom'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoClose } from 'react-icons/io5'
-import { iconCartFilePath, userIconFilePath } from '../../data'
+import { baseURL, iconCartFilePath, userIconFilePath } from '../../data'
 
 function Nav() {
   const navigate = useNavigate()
@@ -21,9 +21,16 @@ function Nav() {
     }
   }, [])
 
+  function extractLastSegment(url: string): string {
+    const segments = url.split('/')
+    return segments[segments.length - 1]
+  }
+
   useEffect(() => {
     const pageTitle = getPageTitle(location.pathname)
     setPageTitle(pageTitle)
+    console.log('The current page title is : ' + pageTitle)
+    console.log('The hash is: ' + extractLastSegment(`${window.location}`))
   }, [location])
 
   const getPageTitle = (pathname: string) => {
@@ -67,16 +74,16 @@ function Nav() {
         {width < breakpoint && open && (
           <ul className="mobile__nav-list">
             <li>
-              <NavLink to="/">home</NavLink>
+              <NavLink to={`${baseURL}/`}>home</NavLink>
             </li>
             <li>
-              <NavLink to="/about">about</NavLink>
+              <NavLink to={`${baseURL}/about`}>about</NavLink>
             </li>
             <li>
-              <NavLink to="/contact">contact</NavLink>
+              <NavLink to={`${baseURL}/contact`}>contact</NavLink>
             </li>
             <li>
-              <NavLink to="/shop">shop</NavLink>
+              <NavLink to={`${baseURL}/shop`}>shop</NavLink>
             </li>
             <li className="mobile__user-description">
               <img
@@ -119,7 +126,7 @@ function Nav() {
                 }
               >
                 <NavLink
-                  to="/"
+                  to={`${baseURL}/`}
                   className={
                     pageTitle === 'Home' || pageTitle === 'About'
                       ? 'color-white'
@@ -136,49 +143,28 @@ function Nav() {
                     : ''
                 }
               >
-                {process.env.NODE_ENV === 'production' ? (
-                  <a
-                    href="/bnanas-demo/#about"
-                    className={
-                      pageTitle === 'Home' || pageTitle === 'About'
-                        ? 'color-white'
-                        : ''
-                    }
-                  >
-                    about
-                  </a>
-                ) : (
-                  <NavLink
-                    to="/about"
-                    className={
-                      pageTitle === 'Home' || pageTitle === 'About'
-                        ? 'color-white'
-                        : ''
-                    }
-                  >
-                    about
-                  </NavLink>
-                )}
+                <NavLink
+                  to={`${baseURL}/about`}
+                  className={
+                    pageTitle === 'Home' || pageTitle === 'About'
+                      ? 'color-white'
+                      : ''
+                  }
+                >
+                  about
+                </NavLink>
               </li>
 
               <li>
-                <NavLink
-                  to={
-                    process.env.NODE_ENV === 'production'
-                      ? '/bnanas-demo/contact'
-                      : '/contact'
-                  }
-                >
-                  contact
-                </NavLink>
+                <NavLink to={`${baseURL}/contact`}>contact</NavLink>
               </li>
               <li>
-                <NavLink to="/shop">shop</NavLink>
+                <NavLink to={`${baseURL}/shop`}>shop</NavLink>
               </li>
             </ul>
             <ul className="header__user-login-list">
               <li>
-                <button onClick={() => goTo('/cart')}>
+                <button onClick={() => goTo(`${baseURL}/cart`)}>
                   <img
                     className="header__cart-icon"
                     src={iconCartFilePath}
