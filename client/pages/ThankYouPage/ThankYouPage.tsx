@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import { useNavigate } from 'react-router-dom'
+import { baseURL } from '../../data'
 
 function ThankYouPage() {
   const navigate = useNavigate()
@@ -17,7 +18,7 @@ function ThankYouPage() {
             Your Purchase!
           </h1>
           <p className='thanks-para'>We're totally bananas for you!</p>
-          <button onClick={() => goTo('/')}>home</button>
+          <button onClick={() => goTo(`${baseURL}/`)}>home</button>
         </div>
       </div>
     </>
