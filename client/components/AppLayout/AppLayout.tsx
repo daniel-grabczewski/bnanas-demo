@@ -14,16 +14,23 @@ function AppLayout() {
   }, [pathname])
 
   useEffect(() => {
-    const hash = window.location.hash
-    if (hash) {
-      const path = hash.substring(1) // Remove the leading '#'
-      navigate(path)
-      // Clear the hash
+    function hashChangeHandler() {
+      const hash = window.location.hash.substring(1)
+      navigate(hash)
       window.location.hash = ''
     }
-  }, [navigate])
 
-  
+    // Initial navigation
+    if (window.location.hash) {
+      hashChangeHandler()
+    }
+
+    window.addEventListener('hashchange', hashChangeHandler)
+
+    return () => {
+      window.removeEventListener('hashchange', hashChangeHandler)
+    }
+  }, [navigate])
 
   return (
     <div className="page">
