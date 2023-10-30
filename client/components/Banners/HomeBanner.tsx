@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { leaningBananaFilePath, logoFilePath } from '../../data'
+import { baseURL, leaningBananaFilePath, logoFilePath } from '../../data'
 
 function HomeBanner() {
   const navigate = useNavigate()
@@ -28,7 +28,7 @@ function HomeBanner() {
                 <p className="subtitle home-banner__subtitle">
                   Take a tropical journey with our luscious tropical bananas.
                 </p>
-                <button onClick={() => goTo('/shop')}>view full range</button>
+                <button onClick={() => goTo(`${baseURL}/shop`)}>view full range</button>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@ function HomeBanner() {
               <p className="subtitle  ">
                 Take a tropical journey with our luscious tropical bananas.
               </p>
-              <button onClick={() => goTo('/shop')}>view full range</button>
+              <button onClick={() => goTo(`${baseURL}/shop`)}>view full range</button>
             </div>
           </div>
         </div>
