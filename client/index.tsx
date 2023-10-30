@@ -18,9 +18,12 @@ import Contact from './pages/Contact/Contact'
 import Product from './pages/Product/Product'
 import ErrorPage from './pages/ErrorPage/ErrorPage'
 
-
 export const routes = createRoutesFromElements(
-  <Route path='/' element={<AppLayout />} errorElement={<ErrorPage />}>
+  <Route
+    path={process.env.NODE_ENV === 'production' ? '/bnanas-demo/' : '/'}
+    element={<AppLayout />}
+    errorElement={<ErrorPage />}
+  >
     <Route index element={<ProtectedComponent component={Home} />} />
     <Route path="about" element={<ProtectedComponent component={About} />} />
     <Route path="cart" element={<ProtectedComponent component={Cart} />} />
@@ -47,8 +50,8 @@ function AppProvider() {
 document.addEventListener('DOMContentLoaded', () => {
   const queryClient = new QueryClient()
   createRoot(document.getElementById('app') as HTMLElement).render(
-      <QueryClientProvider client={queryClient}>
-        <AppProvider />
-      </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <AppProvider />
+    </QueryClientProvider>
   )
 })
