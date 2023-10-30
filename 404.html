@@ -12,16 +12,17 @@
     
       // Check if the URL includes your base path '/bnanas-demo'
       if (path.includes("/bnanas-demo")) {
-        // Redirect to the appropriate route by appending the original path and hash
-        window.location.replace("/bnanas-demo/index.html" + path.replace("/bnanas-demo", "") + hash);
+        // Replace the URL with the root path and append a hash for React to pick up
+        window.location.replace("/bnanas-demo/index.html#" + path.replace("/bnanas-demo/", "") + hash);
       } else {
         // Redirect to the home page for any other 404
         window.location.replace("/bnanas-demo/");
       }
     </script>
     
+    
     <title>Bnana.</title>
-    <script type="module" crossorigin src="/bnanas-demo/assets/index-e0cbe252.js"></script>
+    <script type="module" crossorigin src="/bnanas-demo/assets/index-76b30b91.js"></script>
     <link rel="stylesheet" href="/bnanas-demo/assets/index-16b3e236.css">
   </head>
   <body>
