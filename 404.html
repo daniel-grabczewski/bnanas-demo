@@ -13,7 +13,7 @@
       // Check if the URL includes your base path '/bnanas-demo'
       if (path.includes("/bnanas-demo")) {
         // Replace the URL with the root path and append a hash for React to pick up
-        window.location.replace("/bnanas-demo/index.html#" + path.replace("/bnanas-demo/", "") + hash);
+        window.location.replace("/bnanas-demo/#" + path.replace("/bnanas-demo/", "") + hash);
       } else {
         // Redirect to the home page for any other 404
         window.location.replace("/bnanas-demo/");
