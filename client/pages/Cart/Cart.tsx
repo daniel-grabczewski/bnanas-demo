@@ -10,7 +10,7 @@ import {
 import { CartItem } from '../../../models/cart'
 import CartSummaryDetails from '../../components/CartSummaryDetails/CartSummaryDetails'
 import { useNavigate } from 'react-router-dom'
-import { trashCanFilePath } from '../../data'
+import { baseURL, trashCanFilePath } from '../../data'
 
 function Cart() {
   const navigate = useNavigate()
@@ -55,7 +55,7 @@ function Cart() {
               <div className="col-12">
                 <button
                   className="cart__continue-btn"
-                  onClick={() => goTo('/shop')}
+                  onClick={() => goTo(`${baseURL}/shop`)}
                 >
                   CONTINUE SHOPPING
                 </button>
