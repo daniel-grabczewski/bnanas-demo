@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { aboutHeroFilePath } from '../../data'
+import { aboutHeroFilePath, baseURL } from '../../data'
 
 function AboutBanner() {
   const navigate = useNavigate()
@@ -23,7 +23,7 @@ function AboutBanner() {
                 <p className="subtitle about-banner__subtitle">
                   Bananas are awesome and so is our team!
                 </p>
-                <button onClick={() => goTo('/shop')}>view full range</button>
+                <button onClick={() => goTo(`${baseURL}/shop`)}>view full range</button>
               </div>
             </div>
           </div>
@@ -33,7 +33,7 @@ function AboutBanner() {
               <p className="subtitle about-banner__subtitle">
                 Bananas are awesome and so is our team!
               </p>
-              <button onClick={() => goTo('/shop')}>view full range</button>
+              <button onClick={() => goTo(`${baseURL}/shop`)}>view full range</button>
             </div>
           </div>
         </div>
