@@ -3,11 +3,12 @@
 import { Link } from 'react-router-dom'
 import { useQuery } from 'react-query'
 import { getAllProductsApi } from '../../apis/products'
-import { ShopProduct } from '../../../models/shop'
+import { ShopProduct } from '../../../models/product'
+import { baseURL } from '../../data'
 
 function FeaturedBanana() {
   const { isLoading, data } = useQuery('getProducts', async () => {
-    return await getAllProductsApi()
+    return getAllProductsApi()
   })
 
   //Check if data is undefined.
@@ -42,7 +43,7 @@ function FeaturedBanana() {
                       >
                         <div className="products__product-img">
                           <Link
-                            to={`/shop/${product.id}`}
+                            to={`${baseURL}/shop/${product.id}`}
                             className="products__product-overlay"
                             onClick={() => window.scrollTo(0, 0)}
                           >
@@ -56,7 +57,7 @@ function FeaturedBanana() {
                           className="products__product-name"
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          <Link to={`/shop/${product.id}`}>{product.name}</Link>
+                          <Link to={`${baseURL}/shop/${product.id}`}>{product.name}</Link>
                         </p>
                         <p className="products__product-price">
                           ${product.price}
