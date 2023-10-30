@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { baseURL } from '../../data'
 
 function Footer() {
   return (
@@ -8,16 +9,16 @@ function Footer() {
       </p>
       <ul className="footer__list">
         <li>
-          <Link to="/">home</Link>
+          <Link to={`${baseURL}/`}>home</Link>
         </li>
         <li>
-          <Link to="/about">about</Link>
+          <Link to={`${baseURL}/about`}>about</Link>
         </li>
         <li>
-          <Link to="/shop">shop</Link>
+          <Link to={`${baseURL}/shop`}>shop</Link>
         </li>
         <li>
-          <Link to="/contact">contact</Link>
+          <Link to={`${baseURL}/contact`}>contact</Link>
         </li>
       </ul>
     </footer>
