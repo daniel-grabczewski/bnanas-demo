@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useQuery } from 'react-query'
 import { getAllProductsApi } from '../../apis/products'
 import { ShopProduct } from '../../../models/product'
+import { baseURL } from '../../data'
 
 function Shop() {
   const { isLoading, data } = useQuery('getProducts', async () => {
@@ -39,7 +40,7 @@ function Shop() {
                       >
                         <div className="products__product-img">
                           <Link
-                            to={`/shop/${product.id}`}
+                            to={`${baseURL}/shop/${product.id}`}
                             className="products__product-overlay"
                           >
                             <button className="products__product-btn">
@@ -49,7 +50,7 @@ function Shop() {
                           </Link>
                         </div>
                         <p className="products__product-name">
-                          <Link to={`/shop/${product.id}`}>{product.name}</Link>
+                          <Link to={`${baseURL}/shop/${product.id}`}>{product.name}</Link>
                         </p>
                         <p className="products__product-price">
                           ${product.price}
