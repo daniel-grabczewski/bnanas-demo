@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { CartItem } from '../../../models/cart'
 import { useNavigate } from 'react-router-dom'
 import { clearCartApi } from '../../apis/cart'
+import { baseURL } from '../../data'
 
 interface Props {
   products: CartItem[]
@@ -59,7 +60,7 @@ function CartSummaryDetails({ products, refetch }: Props) {
 
   const handleThankYouPageRedirect = () => {
     if (products.length > 0) {
-      goTo('/thankyoupage')
+      goTo(`${baseURL}/thankyoupage`)
     }
   }
 
