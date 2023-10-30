@@ -1,4 +1,4 @@
-const baseURL = import.meta.env.PROD ? import.meta.env.VITE_APP_BASE_URL : ''
+export const baseURL = import.meta.env.PROD ? import.meta.env.VITE_APP_BASE_URL : ''
 
 export const userIconFilePath = `${baseURL}/images/user-icon.svg`
 
