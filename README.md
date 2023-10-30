@@ -8,4 +8,4 @@
 - Run ```npm run knex seed:run```
 - Run ```npm run dev```, which will start running the app
 - Navigate to [http://localhost:5173](http://localhost:5173) in your browser
-- Now you can buy our bananas!
+- Now you can buy our bananas!!
