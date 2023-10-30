@@ -23,14 +23,13 @@ function Nav() {
 
   function extractLastSegment(url: string): string {
     const segments = url.split('/')
-    return segments[segments.length - 1]
+    return `/${segments[segments.length - 1]}`
   }
 
   useEffect(() => {
-    const pageTitle = getPageTitle(location.pathname)
+    const pathName = extractLastSegment(`${window.location}`)
+    const pageTitle = getPageTitle(pathName)
     setPageTitle(pageTitle)
-    console.log('The current page title is : ' + pageTitle)
-    console.log('The hash is: ' + extractLastSegment(`${window.location}`))
   }, [location])
 
   const getPageTitle = (pathname: string) => {
@@ -95,7 +94,7 @@ function Nav() {
             </li>
 
             <li>
-              <button onClick={() => goTo('/cart')}>
+              <button onClick={() => goTo(`${baseURL}/cart`)}>
                 <img
                   className="header__cart-icon"
                   src={iconCartFilePath}
