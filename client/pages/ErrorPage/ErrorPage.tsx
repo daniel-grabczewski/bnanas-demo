@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { noticeFilePath } from '../../data'
+import { baseURL, noticeFilePath } from '../../data'
 
 function ErrorPage() {
   const navigate = useNavigate()
@@ -25,7 +25,7 @@ function ErrorPage() {
           style={{
             width: 'auto',
           }}
-          onClick={() => goTo('/')}
+          onClick={() => goTo(`${baseURL}/`)}
         >
           home
         </button>
